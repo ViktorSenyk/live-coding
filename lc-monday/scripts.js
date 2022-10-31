@@ -17,20 +17,18 @@
 // 3. if prime -> console
 
 function getPrimes(num) {
-    console.log('NUM', num);
-  for (let number = 2; number <= num; number += 1) {
+  for (let number = 2; number <= num; number++) {
     let counter = 0;
-    for (let index = 2; index <= number; index += 1) {
+    for (let index = 1; index <= number; index++) {
       if (number % index === 0) {
-        counter += 1;
+        counter++;
       }
     }
-    if (counter === 1) {
+    if (counter === 2) {
       console.log(number);
     }
   }
 }
-
 
 // test datajhnu76yu
 getPrimes(10);
