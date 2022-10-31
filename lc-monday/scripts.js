@@ -32,7 +32,7 @@ function getPrimes(num) {
 }
 
 
-// test data
+// test datajhnu76yu
 getPrimes(10);
 getPrimes(11);
 getPrimes(15);
