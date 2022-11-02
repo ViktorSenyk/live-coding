@@ -16,21 +16,40 @@
 //    2.3 if counter > 2 -> is not prime
 // 3. if prime -> console
 
-function getPrimes(num) {
-  for (let number = 2; number <= num; number++) {
-    let counter = 0;
-    for (let index = 1; index <= number; index++) {
-      if (number % index === 0) {
-        counter++;
-      }
-    }
-    if (counter === 2) {
-      console.log(number);
-    }
-  }
-}
+// function getPrimes(num) {
+//   for (let number = 2; number <= num; number++) {
+//     let counter = 0;
+//     for (let index = 1; index <= number; index++) {
+//       if (number % index === 0) {
+//         counter++;
+//       }
+//     }
+//     if (counter === 2) {
+//       console.log(number);
+//     }
+//   }
+// }
 
-// test datajhnu76yu
-getPrimes(10);
-getPrimes(11);
-getPrimes(15);
+// ================================================================== refactoring ============>
+
+let checkPrime = (currentNumber) => {
+  for (let i = 2; i < currentNumber; i++) {
+    if (currentNumber % i === 0) return false;
+  }
+  return true;
+};
+
+let getPrimeNumbers = (limit) => {
+  for (let n = 2; n <= limit; n++) {
+    if (checkPrime(n)) console.log(n);
+  }
+};
+
+// test data
+
+//getPrimeNumbers(10);
+// getPrimeNumbers(11);
+// getPrimeNumbers(13);
+getPrimeNumbers(31);
+
+// prime numbers => 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 ...
